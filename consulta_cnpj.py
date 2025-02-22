@@ -70,7 +70,7 @@ def processar_cnpjs(cnpj_file, output_file):
                 root.update()
                 time.sleep(1)
 
-        cnpj = row['CNPJ'].replace('.', '').replace('/', '').replace('-', '').zfill(14)  # Remover máscara e adicionar zeros à esquerda se necessário
+        cnpj = row['CNPJ'].replace('.', '').replace('/', '').replace('-', '').strip().zfill(14)  # Remover máscara, espaços e adicionar zeros à esquerda se necessário
         print(f"Consultando CNPJ: {cnpj}")
         resultado = consulta_cnpj(cnpj)
         if resultado:
@@ -96,8 +96,9 @@ def processar_cnpjs(cnpj_file, output_file):
         print(f"Erro ao salvar o arquivo Excel: {e}")
         messagebox.showerror("Erro", f"Erro ao salvar o arquivo Excel: {e}")
 
+
 def consultar_unico_cnpj():
-    cnpj = cnpj_entry.get().replace('.', '').replace('/', '').replace('-', '').zfill(14)
+    cnpj = cnpj_entry.get().replace('.', '').replace('/', '').replace('-', '').strip().zfill(14)
     resultado = consulta_cnpj(cnpj)
     if resultado:
         resultado_text = f"CNPJ: {cnpj}\nSituação: {resultado['situacao']}\n{resultado['simples']}\n{resultado['simei']}\nEmail: {resultado['email']}"

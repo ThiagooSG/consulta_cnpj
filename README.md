@@ -3,7 +3,8 @@
 
 ## 🚀 Descrição
 
-Este projeto foi desenvolvido para facilitar a consulta de informações relacionadas ao CNPJ de empresas no Brasil. Através da API da https://www.receitaws.com.br/, ele pode retornar informações detalhadas sobre a situação cadastral, adesão ao Simples Nacional e ao MEI, entre outros dados.
+Este projeto foi desenvolvido para facilitar a consulta de informações relacionadas ao CNPJ de empresas no Brasil. Através da API da [receitaws](https://www.receitaws.com.br/), ele pode retornar informações detalhadas sobre a situação cadastral, adesão ao Simples Nacional e ao MEI, entre outros dados.
+Nesse projeto é busco apenas situação da empresa, se optante ou não pelo simples ou mei e o e-mail do responsável cadastrado.
 
 Além disso, ele permite que você faça a consulta de múltiplos CNPJs em uma planilha Excel e exporte os resultados para um novo arquivo.
 
